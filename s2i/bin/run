@@ -2,8 +2,8 @@
 
 set -e
 
-if [ -e "/opt/app-root/etc/generate_container_user" ]; then
-  # source /opt/app-root/etc/generate_container_user
-fi
+# if [ -e "/opt/app-root/etc/generate_container_user" ]; then
+#   source /opt/app-root/etc/generate_container_user
+# fi
 
 exec nginx -g "daemon off;"
