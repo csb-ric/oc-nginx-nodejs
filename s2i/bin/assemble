@@ -29,8 +29,9 @@ echo "---> Building your application from source"
 ./node_modules/ember-cli/bin/ember deploy production
 
 echo "---> Cleanup"
-rm -rf /opt/app-root/src
-mkdir /opt/app-root/src
+rm -rf /opt/app-root/src/*
+rm -rf /opt/app-root/src/.cache
+rm -rf /opt/app-root/src/.config
 
 echo "---> Moving application code"
 mv dist/* /opt/app-root/src/
