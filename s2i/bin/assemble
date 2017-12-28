@@ -28,12 +28,15 @@ bower install
 echo "---> Building your application from source"
 ./node_modules/ember-cli/bin/ember deploy production
 
+echo "---> Cleanup"
+rm -rf /opt/app-root/src
+mkdir /opt/app-root/src
+
 echo "---> Moving application code"
 mv dist/* /opt/app-root/src/
 
 echo "---> Removing build artifacts"
-rm -rf /tmp/src/*
-rm -rf /opt/app-root/src/.ssh
+rm -rf /tmp/src
 
 cd /opt/app-root/src/
 
