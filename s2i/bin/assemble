@@ -7,6 +7,15 @@
 
 set -e
 
+echo "---> Setting up .ssh"
+mkdir .ssh
+cp ssh-privatekey .ssh/id_rsa
+chmod 700 .ssh
+chmod 400 .ssh/id_rsa
+
+echo "---> Adding github.com to known_hosts"
+ssh-keyscan github.com >> .ssh/known_hosts
+
 shopt -s dotglob
 echo "---> Installing application source ..."
 cd /tmp/src/
@@ -24,6 +33,7 @@ mv dist/* /opt/app-root/src/
 
 echo "---> Removing build artifacts"
 rm -rf /tmp/src/*
+rm -rf /opt/app-root/src/.ssh
 
 cd /opt/app-root/src/
 
