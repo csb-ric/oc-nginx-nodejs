@@ -34,7 +34,7 @@ rm -rf /opt/app-root/src/.cache
 rm -rf /opt/app-root/src/.config
 
 echo "---> Moving application code"
-mv dist/* /opt/app-root/src/
+mv -v dist/* /opt/app-root/src/
 
 echo "---> Removing build artifacts"
 rm -rf /tmp/src
