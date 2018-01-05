@@ -21,7 +21,7 @@ echo "---> Installing application source ..."
 cd /tmp/src/
 
 echo "---> Installing dependencies"
-yarn
+yarn --ignore-engines
 yarn global add bower
 bower install
 
