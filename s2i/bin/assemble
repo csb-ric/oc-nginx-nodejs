@@ -22,6 +22,7 @@ cd /tmp/src/
 
 echo "---> Installing dependencies"
 yarn --ignore-engines
+yarn list
 yarn global add bower
 bower install
 
