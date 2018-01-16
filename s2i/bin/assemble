@@ -33,6 +33,10 @@ echo "---> Cleanup"
 # rm -rf /opt/app-root/src/*
 rm -rf /opt/app-root/src/.cache
 rm -rf /opt/app-root/src/.config
+rm -rf /opt/app-root/src/.local
+rm -rf /opt/app-root/src/.npm-global
+rm -rf /opt/app-root/src/.pki
+rm -rf /opt/app-root/src/.ssh
 
 echo "---> Moving application code"
 mv -v dist/* /opt/app-root/src/
