@@ -7,7 +7,7 @@ USER root
 # This image will be initialized with "npm run $NPM_RUN"
 # See https://docs.npmjs.com/misc/scripts, and your repo's package.json
 # file for possible values of NPM_RUN
-ENV NODEJS_VERSION=8 \
+ENV NODEJS_VERSION=10 \
     NPM_RUN=start \
     NPM_CONFIG_PREFIX=$HOME/.npm-global \
     PATH=$HOME/node_modules/.bin/:$HOME/.npm-global/bin/:$PATH
@@ -18,7 +18,7 @@ RUN yum repolist all && \
     yum install -y yum-utils && \
     yum-config-manager --enable rhel-7-server-ose-3.5-rpms && \
     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo > /etc/yum.repos.d/yarn.repo && \
-    curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - && \
+    curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - && \
     INSTALL_PKGS="nodejs yarn nss_wrapper git gcc-c++" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
