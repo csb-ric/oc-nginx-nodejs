@@ -14,6 +14,7 @@ ENV NODEJS_VERSION=10 \
 
 # We need to call 2 (!) yum commands before being able to enable repositories properly
 # This is a workaround for https://bugzilla.redhat.com/show_bug.cgi?id=1479388
+RUN subscription-manager attach --auto
 RUN yum repolist all
 RUN yum install -y yum-utils
 RUN yum-config-manager --enable rhel-7-server-ose-3.5-rpms
