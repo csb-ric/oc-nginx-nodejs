@@ -16,7 +16,6 @@ ENV NODEJS_VERSION=10 \
 # This is a workaround for https://bugzilla.redhat.com/show_bug.cgi?id=1479388
 RUN yum repolist all && \
     yum install -y yum-utils && \
-    yum-config-manager --enable rhel-7-server-ose-3.5-rpms && \
     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo > /etc/yum.repos.d/yarn.repo && \
     curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - && \
     INSTALL_PKGS="nodejs yarn nss_wrapper git gcc-c++" && \
