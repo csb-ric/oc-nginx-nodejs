@@ -27,6 +27,7 @@ yarn global add bower
 bower install
 
 echo "---> Building your application from source"
+export NODE_OPTIONS="--max_old_space_size=4096"
 ./node_modules/ember-cli/bin/ember deploy production
 
 echo "---> Cleanup"
